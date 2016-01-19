@@ -86,16 +86,14 @@ what's in a view?
 
   all of this stuff goes into the DogView because as you saw, we only updated and deleted which is an action you perform on individual dogs. if you wanted to add an entire dog to the collection, you would want to work in your DogCollectionView
   -initialize: (is it weird that we don't have a change event?) 
-  	-in this initializer we're telling the collection that we're going to be adding a dog and that it should look out ffor the addDog function
+  	-in this initializer we're telling the collection that we're going to be adding a dog and that it should look out for the addDog function
 
-new and the create 
+the createDog function actually makes a new Dog: grabs the info from the form, saves the info to a model, adds the model to the collection. the addDog function renders that new dog onto the page. we're not absolutely positive why these two functions need to 
+
+render: loads the template into the view's "el" property 
+
+the CollectionView and the FormView are both looking at the same data but in backbone we like to separate out our logic as much as possible. the new dog is created in the form and so that logic, the createDog function, is stored in the FormView, even though what is's doing is adding a new Dog (model) to the collection
 
 
-
-
-
-
-what is a model?
--a model contains the data
 
 
