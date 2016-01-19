@@ -1,18 +1,18 @@
 console.log("linked")
 
-var Post = Backbone.Model.extend({
-  urlRoot: "/posts"
+var Dog = Backbone.Model.extend({
+  urlRoot: "/dogs"
 })
 
-var PostCollection = Backbone.Collection.extend({
-  url: '/posts',
+var DogCollection = Backbone.Collection.extend({
+  url: '/dogs',
 
-  model: Post
+  model: Dog
 })
 
-var PostView = Backbone.View.extend({
+var DogView = Backbone.View.extend({
   tagName: "li",
-  //our post views listen for two events on their models
+  //our dog views listen for two events on their models
   //if a model 'changes', the view is re rendered
   //if a model 'destroys', the view is removed
   initialize: function(){
@@ -29,8 +29,8 @@ var PostView = Backbone.View.extend({
   template: $("#message-template").html(),
   editTemplate: $("#edit-form").html(),
   render: function(){
-    var renderedPost = Mustache.render(this.template, this.model.attributes)
-    this.$el.html(renderedPost)
+    var renderedDog = Mustache.render(this.template, this.model.attributes)
+    this.$el.html(renderedDog)
     //we don't actually need to return the object for this app, but this is a common pattern you will see
     return this
   },
@@ -60,42 +60,42 @@ var PostView = Backbone.View.extend({
   }
 })
 
-var PostShow = Backbone.View.extend({
+var DogShow = Backbone.View.extend({
 
 })
 
-var PostCollectionView = Backbone.View.extend({
+var DogCollectionView = Backbone.View.extend({
   initialize: function(){
     //set behavior that fires on the creation of every instance
     //listen to my collection i'm observing, if somethings added, do something
-    this.listenTo(this.collection, 'add', this.addPost);
+    this.listenTo(this.collection, 'add', this.addDog);
   },
 
-  addPost: function(modelFromCollection){
-    var newPostView = new PostView({model: modelFromCollection});
-    newPostView.render();
-    this.$el.append(newPostView.$el)
+  addDog: function(modelFromCollection){
+    var newDogView = new DogView({model: modelFromCollection});
+    newDogView.render();
+    this.$el.append(newDogView.$el)
   }
 })
 
 var FormView = Backbone.View.extend({
 
   initialize: function(options){
-    this.postCollection = options.collection 
+    this.dogCollection = options.collection 
   },
 
   events: {
-    'submit': 'createPost'
+    'submit': 'createDog'
   },
 
-  createPost: function(event){
+  createDog: function(event){
     event.preventDefault()
     var name = $("[name='name']").val();
     var breed = $("[name='breed']").val();
 
 
-    var newModel = new Post({name: name, breed: breed})
-    this.postCollection.create(newModel)
+    var newModel = new Dog({name: name, breed: breed})
+    this.dogCollection.create(newModel)
     $("[name='name']").val("");
     $("[name='breed']").val("");
   }
@@ -105,15 +105,15 @@ var Router = Backbone.Router.extend({
 
   routes: {
     '': 'index',
-    'posts/:id': 'show'
+    'dogs/:id': 'show'
   },
 
   index: function(){
-    var postCollection = new PostCollection()
+    var dogCollection = new DogCollection()
     //when we create these views, we pass in a 'live' piece of the DOM as the top level el.
-    var postCollectionView = new PostCollectionView({collection: postCollection, el: $("ul")})
-    var formView = new FormView({el: $("form"), collection: postCollection})
-    postCollection.fetch()
+    var dogCollectionView = new DogCollectionView({collection: dogCollection, el: $("ul")})
+    var formView = new FormView({el: $("form"), collection: dogCollection})
+    dogCollection.fetch()
   },
 
   show: function(id){
