@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Dogs</title>
+
+  </head>
+  <body>
+    <h1> bark! It's like yelp but for dogs! </h1>
+    <form>
+      <h3> Add a review! </h3>
+      Dog Name
+      <input type="text" name="name">
+      Breed
+      <input type="text" name="breed">
+      <button> add it</button>
+    </form>
+    <div id="container">
+      <ul id="message-list">
+        <script type="text/template" id="message-template">
+            <p>{{name}}</p>
+            <p>{{breed}}</p>
+            <button id="show-edit"> EDIT </button>
+            <button id="delete"> DELETE </button>
+        </script>
+        <script type="text/template" id="edit-form">
+        <div>
+          </br>
+          Update dog name
+          <input type="text" name="edit-name" placeholder="{{name}}">
+          Update breed
+          <input type="text" name="edit-breed" placeholder="{{breed}}">
+          <button id="update"> update </button>
+        </div>
+        </script>
+      </ul>
+    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js"></script>
+  <script type="text/javascript" src="/main.js"></script>
+
+
+<!--   // <script src="../bower_components/jquery/dist/jquery.js"></script>
+  // <script src="../bower_components/underscore/underscore.js"></script>
+  // <script src="../bower_components/backbone/backbone.js"></script>
+  // <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js"></script>
+
+  // <script type="text/javascript" src="../main.js"></script> -->
+
+    <!-- Templates -->
+
+
+  </body>
+</html>

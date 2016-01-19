@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "name": "Poppy",
+      "breed": "Dachshund",
+      "id": 7
+    },
+    {
+      "name": "Benny",
+      "breed": "Spaniel Mix",
+      "id": 8
+    },
+    {
+      "name": "Henri",
+      "breed": "Chihuahua mix",
+      "id": 9
+    }
+  ]
+}
