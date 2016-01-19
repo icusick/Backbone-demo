@@ -3,17 +3,50 @@
     {
       "name": "Poppy",
       "breed": "Dachshund",
+      "cuteness": 5,
+      "behavior": 4,
+      "energy": 2,
       "id": 7
-    },
-    {
-      "name": "Benny",
-      "breed": "Spaniel Mix",
-      "id": 8
     },
     {
       "name": "Henri",
       "breed": "Chihuahua mix",
+      "cuteness": 5,
+      "behavior": 4,
+      "energy": 3,
       "id": 9
+    },
+    {
+      "name": "Benny",
+      "breed": "Spaniel Mix",
+      "cuteness": 5,
+      "behavior": 2,
+      "energy": 4,
+      "id": 10
+    },
+    {
+      "name": "Will",
+      "breed": "Miniature Poodle",
+      "cuteness": 4,
+      "behavior": 1,
+      "energy": 3,
+      "id": 11
+    },
+    {
+      "name": "fake",
+      "breed": "fake",
+      "cuteness": 1,
+      "behavior": 1,
+      "energy": 1,
+      "id": 12
+    },
+    {
+      "name": "fake2",
+      "breed": "fake",
+      "cuteness": 0,
+      "behavior": 0,
+      "energy": 0,
+      "id": 13
     }
   ]
 }

@@ -3,6 +3,13 @@
   <head>
   	<title>Dogs</title>
 
+    <style>
+      th {
+        text-align: left;
+        border: 1px solid black;
+      }
+    </style>
+
   </head>
   <body>
     <h1> bark! It's like yelp but for dogs! </h1>
@@ -12,16 +19,36 @@
       <input type="text" name="name">
       Breed
       <input type="text" name="breed">
+      Cuteness
+      <input type="text" name="cuteness">
+      Behavior
+      <input type="text" name="behavior">
+      Energy
+      <input type="text" name="energy">
       <button> add it</button>
     </form>
     <div id="container">
-      <ul id="message-list">
+      <table id="message-list" style="width:100%; border: 1px solid black">
+        <tr>
+          <th>Name</th>
+          <th>Breed</th>
+          <th class="cuteness">Cuteness</th>
+          <th class="behavior">Behavior</th>
+          <th class="energy">Energy</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
         <script type="text/template" id="message-template">
-            <p>{{name}}</p>
-            <p>{{breed}}</p>
-            <button id="show-edit"> EDIT </button>
-            <button id="delete"> DELETE </button>
+            <td>{{name}}</td>
+            <td>{{breed}}</td>
+            <td class="cuteness">{{cuteness}}</td>
+            <td>{{behavior}}</td>
+            <td>{{energy}}</td>
+            <td><button id="show-edit"> EDIT </button></td>
+            <td><button id="delete"> DELETE </button></td>
         </script>
+        
+
         <script type="text/template" id="edit-form">
         <div>
           </br>
@@ -29,10 +56,16 @@
           <input type="text" name="edit-name" placeholder="{{name}}">
           Update breed
           <input type="text" name="edit-breed" placeholder="{{breed}}">
+          Update cuteness
+          <input type="text" name="edit-cuteness" placeholder="{{cuteness}}">
+          Update behavior
+          <input type="text" name="edit-behavior" placeholder="{{behavior}}">
+          Update energy
+          <input type="text" name="edit-energy" placeholder="{{energy}}">
           <button id="update"> update </button>
         </div>
         </script>
-      </ul>
+      </table>
     </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
